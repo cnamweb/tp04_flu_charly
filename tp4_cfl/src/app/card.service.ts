@@ -12,6 +12,10 @@ export class CardService {
     addCard(card: Card) {
         this.cards.update(cards => [...cards, card]);
     }
+
+    deleteCard(card: Card) {
+        this.cards.update(cards => cards.filter(c => c !== card));
+    }
     
     get getCards() {
         return this.cards;
